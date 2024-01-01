@@ -1,0 +1,4 @@
+build
+.xmake
+build_switch
+cmake-build-switch

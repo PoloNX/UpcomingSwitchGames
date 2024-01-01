@@ -1,0 +1,11 @@
+[
+{
+  "directory": "/home/charlie/Documents/repos/C++/switch/UpcomingSwitchGames",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-std=c++17", "-DNDEBUG", "-o", "build/.objs/UpcomingSwitchGames/linux/x86_64/release/source/main_activity.cpp.o", "source/main_activity.cpp"],
+  "file": "source/main_activity.cpp"
+},
+{
+  "directory": "/home/charlie/Documents/repos/C++/switch/UpcomingSwitchGames",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-std=c++17", "-DNDEBUG", "-o", "build/.objs/UpcomingSwitchGames/linux/x86_64/release/source/main.cpp.o", "source/main.cpp"],
+  "file": "source/main.cpp"
+}]
