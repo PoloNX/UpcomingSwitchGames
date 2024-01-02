@@ -1,9 +1,12 @@
 #include "views/recycling_list_tab.hpp"
+#include "views/game_view.hpp"
+
 #include "utils/download.hpp"
+#include "utils/games.hpp"
 
 #include <json.hpp>
 
-std::vector<std::string> games;
+std::vector<Game> games;
 
 RecyclerCell::RecyclerCell()
 {
@@ -37,7 +40,7 @@ std::string DataSource::titleForHeader(brls::RecyclerFrame* recycler, int sectio
 brls::RecyclerCell* DataSource::cellForRow(brls::RecyclerFrame* recycler, brls::IndexPath indexPath)
 {
     RecyclerCell* item = (RecyclerCell*)recycler->dequeueReusableCell("Cell");
-    item->label->setText(games[indexPath.row]);
+    item->label->setText(games[indexPath.row].getName());
     //item->image->setImageFromRes("img/pokemon/thumbnails/" + pokemons[indexPath.row].id + ".png");
     return item;
 }
@@ -45,7 +48,7 @@ brls::RecyclerCell* DataSource::cellForRow(brls::RecyclerFrame* recycler, brls::
 void DataSource::didSelectRowAt(brls::RecyclerFrame* recycler, brls::IndexPath indexPath)
 {
     brls::Logger::info("Item selected.");
-    //recycler->present(new PokemonView(pokemons[indexPath.row]));
+    recycler->present(new GameView(games[indexPath.row]));
 }
 
 // RECYCLER VIEW
@@ -54,11 +57,11 @@ RecyclingListTab::RecyclingListTab()
 {
     // Inflate the tab from the XML file
     this->inflateFromXMLRes("xml/tabs/recycling_list.xml");
-    
-    games.clear();
-    games.push_back("Bulbasaur");
 
-    //nlohmann::json data = net::downloadRequest("https://pokeapi.co/api/v2/pokemon?limit=151");
+    games.clear();
+
+    UpcomingGames upcomingGames;
+    games = upcomingGames.getGames();
 
     recycler->estimatedRowHeight = 70;
     recycler->registerCell("Header", []() { return RecyclerHeader::create(); });

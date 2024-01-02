@@ -12,15 +12,7 @@
         id="image"
         width="auto"
         height="33%"
-        image="@res/img/borealis_256.png"
         marginBottom="@style/about/description_margin"/>
-
-    <brls:Label
-        id="description"
-        width="40%"
-        height="auto"
-        grow="1.0"
-        horizontalAlign="center" />
 
     <brls:Button
         id="close_button"
