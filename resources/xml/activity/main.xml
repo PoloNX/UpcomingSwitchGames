@@ -2,21 +2,9 @@
     iconInterpolation="linear"
     footerHidden="false">
     <brls:TabFrame
-        title="@i18n/demo/title"
-        icon="@res/img/borealis_96.png">
+        title="UpcomingSwitchGames">
 
-<!--        <brls:Separator />-->
-
-<!--        <brls:Tab label="@i18n/demo/tabs/popups" />-->
-<!--        <brls:Tab label="@i18n/demo/tabs/hos_layout" />-->
-
-<!--        <brls:Separator />-->
-
-<!--        <brls:Tab label="@i18n/demo/tabs/misc_layouts" />-->
-<!--        <brls:Tab label="@i18n/demo/tabs/misc_components" />-->
-<!--        <brls:Tab label="@i18n/demo/tabs/misc_tools" />-->
-
-        <brls:Tab label="UpcomingGames">
+        <brls:Tab label="Upcoming Games">
             <RecyclingListTab />
         </brls:Tab>
 
@@ -34,10 +22,18 @@
                 paddingLeft="@style/about/padding_sides"
                 paddingRight="@style/about/padding_sides" >
 
+                <brls:Label
+                    width="auto"
+                    height="auto"
+                    fontSize="35"
+                    horizontalAlign="center"
+                    text="UpcomingSwitchGames"/>
+
                 <brls:Image
                     width="auto"
                     height="33%"
                     image="@res/img/borealis_256.png"
+                    marginTop="@style/about/description_margin"
                     marginBottom="@style/about/description_margin"/>
 
                 <brls:Box
@@ -47,17 +43,9 @@
                     marginBottom="@style/about/description_margin">
 
                     <brls:Label
-                        width="40%"
-                        height="auto"
-                        text="UpcomingSwitchGames"
-                        fontSize="36"
-                        horizontalAlign="right"
-                        verticalAlign="top" />
-
-                    <brls:Label
                         width="auto"
                         height="auto"
-                        text="UpcomingSwitchGames is a simple app that allows you to see the upcoming games for the Nintendo Switch."
+                        text="UcpomingSwitchGames is a simple app that allows you to see the upcoming games for the Nintendo Switch."
                         marginLeft="@style/about/description_margin" />
 
                 </brls:Box>
@@ -73,17 +61,14 @@
                     <brls:Label
                         width="auto"
                         height="auto"
-                        text="@i18n/demo/about/github" />
+                        fontSize="12"
+                        text="Find it on github.com/PoloNX/UpcomingSwitchGames" />
 
                     <brls:Label
                         width="auto"
                         height="auto"
-                        text="@i18n/demo/about/licence" />
-
-                    <brls:Label
-                        width="auto"
-                        height="auto"
-                        text="@i18n/demo/about/logo_credit" />
+                        fontSize="12"
+                        text="Licensed under Apache 2.0" />
 
                 </brls:Box>
 

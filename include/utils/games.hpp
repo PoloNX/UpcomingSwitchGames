@@ -6,7 +6,11 @@
 
 #include "utils/download.hpp"
 
-const std::string nintendoIp = "23.214.229.233";
+enum class GameSort {
+    RELEASE_DATE,
+    NAME,
+    SIZE
+};
 
 class Game {
 public:
@@ -14,6 +18,12 @@ public:
     Game() {};
 
     std::vector<unsigned char> downloadBanner();
+
+    void setIcon(brls::Image* banner) {this->icon = icon; this->bool_icon = true;}
+
+    bool hasIcon() {return bool_icon;}
+
+    std::vector<unsigned char> startDownloadIcon();
 
     std::string getBannerUrl() const {return bannerUrl;}
     brls::Image* getBanner() const {return banner;}
@@ -28,12 +38,18 @@ public:
     std::string getNumberOfPlayers() const {return numberOfPlayers;}
     std::string getPublisher() const {return publisher;}
     std::string getRegion() const {return region;}
+    std::string getReleaseDate_str() const {return releaseDate_str;}
     int getReleaseDate() const {return releaseDate;}
     const std::vector<std::string>& getScreenshots() const {return screenshots;}
     int getSize() const {return size;}
 private:
+    void replaceURL(std::string& url);
+
     std::string bannerUrl;
     brls::Image* banner;
+
+    brls::Image* icon;
+    bool bool_icon = false;
 
     std::vector<std::string> category;
     std::string description;
@@ -46,6 +62,7 @@ private:
     std::string numberOfPlayers;
     std::string publisher;
     std::string region;
+    std::string releaseDate_str;
     int releaseDate;
     std::vector<std::string> screenshots;
     int size;
@@ -55,6 +72,7 @@ class UpcomingGames {
 public:
     UpcomingGames();
     std::vector<Game> getGames() { return games; }
+    void sort(GameSort sort);
 private:
     nlohmann::json data;
     std::vector<Game> games;

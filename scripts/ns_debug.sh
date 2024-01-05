@@ -33,7 +33,7 @@ else
 fi
 
 addr2line() {
-  aarch64-none-elf-addr2line -e "$elf_path" -f -p -C -a "$1"
+  addr2line -e "$elf_path" -f -p -C -a "$1"
 }
 
 echo "===>    Exception Info:"

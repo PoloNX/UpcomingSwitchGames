@@ -22,6 +22,7 @@ namespace net {
         curl_global_init(CURL_GLOBAL_ALL);
         auto curl = curl_easy_init();
 
+        brls::Logger::debug("Requesting {}", url);
         if (!curl) 
             brls::Logger::error("Error while initializing libcurl");
         
@@ -55,6 +56,7 @@ namespace net {
         curl_global_init(CURL_GLOBAL_ALL);
         auto curl = curl_easy_init();
 
+        brls::Logger::debug("Downloading image {}", url);
         if (!curl)
             brls::Logger::error("Error while initializing libcurl");
 

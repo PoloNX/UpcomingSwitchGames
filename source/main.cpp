@@ -1,21 +1,25 @@
 #include <borealis.hpp>
 #include <switch.h>
 
+#include "utils/constants.hpp"
+#include "utils/games.hpp"
 #include "views/recycling_list_tab.hpp"
 #include "activity/main_activity.hpp"
 
 int main(int argc, char* argv[]) {
     brls::Logger::setLogLevel(brls::LogLevel::LOG_DEBUG);
-    brls::Application::enableDebuggingView(true);
+    //brls::Application::enableDebuggingView(true);
 
     if(!brls::Application::init()) {
         brls::Logger::error("Unable to init Borealis application");
         return -1;
     }
 
-    brls::Application::createWindow("UpcomingSwitchGames");
+    brls::Application::createWindow(fmt::format("UpcomingSwitchGames {}.{}.{}", MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION));
     brls::Application::getPlatform()->setThemeVariant(brls::ThemeVariant::DARK);
     brls::Application::setGlobalQuit(false);
+
+
 
     brls::Application::registerXMLView("RecyclingListTab", RecyclingListTab::create);
 
