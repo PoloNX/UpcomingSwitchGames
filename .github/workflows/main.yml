@@ -3,8 +3,7 @@ name: Build UpcomingSwitchGames
 on:
   push:
     branches:
-      - yoga
-      - dev
+      - master
   pull_request:
 
 jobs:
