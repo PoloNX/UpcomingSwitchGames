@@ -114,10 +114,7 @@ RecyclingListTab::RecyclingListTab()
         return true;
     });
 
-    //std::unique_ptr<UpcomingGames> upcomingGames = std::make_unique<UpcomingGames>();
-
     recycler->estimatedRowHeight = 70;
-    //recycler->registerCell("Header", []() { return RecyclerHeader::create(); });
     recycler->registerCell("Cell", []() { return RecyclerCell::create(); });
     recycler->setDataSource(dataSource);
 }
