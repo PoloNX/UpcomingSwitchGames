@@ -29,5 +29,11 @@
         "releaseDate" : "Date de Sortie",
         "Languages" : "Langue",
         "category" : "Catégorie"
-    } 
+    },
+
+    "about" : {
+        "description" : "UcpomingSwitchGames est un homebrew permettant de voir les prochains jeux sur la Nintendo Switch.",
+        "license" : "Licensié sous GPL-3.0",
+        "github" : "Retrouvez le à github.com/PoloNX/UpcomingSwitchGames"
+    }
 }

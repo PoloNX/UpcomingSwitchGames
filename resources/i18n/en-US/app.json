@@ -29,5 +29,11 @@
         "releaseDate" : "Release Date",
         "Languages" : "Languages",
         "category" : "Category"
-    } 
+    },
+
+    "about" : {
+        "description" : "UcpomingSwitchGames is a simple app that allows you to see the upcoming games for the Nintendo Switch.",
+        "license" : "Licensed under GPL-3.0",
+        "github" : "Find it on github.com/PoloNX/UpcomingSwitchGames"
+    }
 }

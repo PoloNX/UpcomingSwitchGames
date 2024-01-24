@@ -30,31 +30,25 @@
                 paddingLeft="@style/about/padding_sides"
                 paddingRight="@style/about/padding_sides" >
 
-                <brls:Label
-                    width="auto"
-                    height="auto"
-                    fontSize="35"
-                    horizontalAlign="center"
-                    text="UpcomingSwitchGames"/>
-
-                <brls:Image
-                    width="auto"
-                    height="33%"
-                    image="@res/img/borealis_256.png"
-                    marginTop="@style/about/description_margin"
-                    marginBottom="@style/about/description_margin"/>
-
                 <brls:Box
                     width="auto"
                     height="auto"
-                    axis="row"
+                    axis="column"
                     marginBottom="@style/about/description_margin">
 
                     <brls:Label
                         width="auto"
                         height="auto"
-                        text="UcpomingSwitchGames is a simple app that allows you to see the upcoming games for the Nintendo Switch."
-                        marginLeft="@style/about/description_margin" />
+                        fontSize="35"
+                        horizontalAlign="center"
+                        text="@i18n/app/title"/>
+
+                    <brls:Label
+                        width="auto"
+                        height="auto"
+                        text="@i18n/app/about/description"
+                        horizontalAlign="center"
+                        marginTop="30px"/>
 
                 </brls:Box>
 
@@ -63,20 +57,19 @@
                     height="auto"
                     axis="column"
                     alignItems="center"
-                    justifyContent="spaceEvenly"
                     grow="1.0" >
 
                     <brls:Label
                         width="auto"
                         height="auto"
                         fontSize="12"
-                        text="Find it on github.com/PoloNX/UpcomingSwitchGames" />
+                        text="@i18n/app/about/github" />
 
                     <brls:Label
                         width="auto"
                         height="auto"
                         fontSize="12"
-                        text="Licensed under Apache 2.0" />
+                        text="@i18n/app/about/license" />
 
                 </brls:Box>
 
