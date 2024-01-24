@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>SimpleModDownloader</h1>
+    <h1>UpcomingSwitchGames</h1>
     <p>A Switch homebrew that allows you to see upcoming games on the Switch</p>
     <a rel="IMAGE">
         <img src="./resources/img/icon.jpg">
