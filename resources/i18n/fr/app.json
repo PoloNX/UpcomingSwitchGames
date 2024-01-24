@@ -10,7 +10,7 @@
     
     "settings": {
         "titledb_languages" : "Langues de TitleDB",
-        "app_language" : "Langues de l'application",
+        "app_language" : "Langues de l'application"
     },
 
     "hints" : {

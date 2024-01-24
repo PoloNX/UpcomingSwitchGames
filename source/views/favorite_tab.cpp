@@ -46,7 +46,7 @@ brls::RecyclerCell* FavoriteDataSource::cellForRow(brls::RecyclerFrame* recycler
 {
     FavoriteRecyclerCell* item = (FavoriteRecyclerCell*)recycler->dequeueReusableCell("Cell");
     item->label->setText(favorite_games[indexPath.row].getName());
-    item->subtitle->setText(fmt::format("Release Date : {}, ", favorite_games[indexPath.row].getReleaseDate_str()));
+    item->subtitle->setText(fmt::format("{} : {}", "app/game/releaseDate"_i18n, favorite_games[indexPath.row].getReleaseDate_str()));
     item->subtitle->setTextColor(nvgRGBA(100, 100, 100, 255));
 
     item->registerAction("app/hints/unfavorite"_i18n , brls::ControllerButton::BUTTON_X, [this, item, indexPath](brls::View* view){

@@ -74,7 +74,7 @@ brls::RecyclerCell* DataSource::cellForRow(brls::RecyclerFrame* recycler, brls::
 {
     RecyclerCell* item = (RecyclerCell*)recycler->dequeueReusableCell("Cell");
     item->label->setText(upcomingGames->getGames()[indexPath.row].getName());
-    item->subtitle->setText(fmt::format("Release Date : {}, ", upcomingGames->getGames()[indexPath.row].getReleaseDate_str()));
+    item->subtitle->setText(fmt::format("{} : {}", "app/game/releaseDate"_i18n,upcomingGames->getGames()[indexPath.row].getReleaseDate_str()));
     item->subtitle->setTextColor(nvgRGBA(100, 100, 100, 255));
 
     item->registerAction("app/hints/favorite"_i18n, brls::ControllerButton::BUTTON_X, [this, item, indexPath](brls::View* view){
