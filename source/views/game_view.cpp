@@ -1,7 +1,29 @@
 #include "views/game_view.hpp"
 #include "activity/main_activity.hpp"
 
+#include <iomanip>
+
 using namespace brls::literals;
+
+std::string convertSizeToString(const int size) {
+    const int kio = 1024;
+    const int mio = kio * kio;
+    const int gio = mio * kio;
+
+    std::string string_size;
+
+    if (size < kio) {
+        string_size = std::to_string(size) + " octets";
+    } else if (size < mio) {
+        string_size = std::to_string(static_cast<double>(size) / kio) + " Ko";
+    } else if (size < gio) {
+        string_size = std::to_string(static_cast<double>(size) / mio) + " Mo";
+    } else {
+        string_size = std::to_string(static_cast<double>(size) / gio) + " Go";
+    }
+
+    return string_size;
+}
 
 GameView::GameView(Game game) : game(game)
 {
@@ -36,8 +58,10 @@ GameView::GameView(Game game) : game(game)
         publisher->setText(fmt::format("{} : N/A", "app/game/publisher"_i18n));
 
     //SIZE
-    if(game.getSize() > 0)
-        size->setText(fmt::format("{} : {}", "app/game/size"_i18n, game.getSize()));
+    if(game.getSize() > 0) {
+        std::string size_str = convertSizeToString(game.getSize());
+        size->setText(fmt::format("{} : {}", "app/game/size"_i18n, size_str));
+    }
     else
         size->setText(fmt::format("{} : N/A", "app/game/size"_i18n));
 
