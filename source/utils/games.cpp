@@ -1,5 +1,6 @@
 #include "utils/games.hpp"
 #include "utils/constants.hpp"
+#include "utils/config.hpp"
 
 #include <regex>
 
@@ -30,7 +31,10 @@ bool compareSize(const Game& game1, const Game& game2) {
 }
 
 UpcomingGames::UpcomingGames() {
-    data = net::downloadRequest("https://raw.githubusercontent.com/PoloNX/upcoming-games-link/master/US.en.json");
+    cfg::Config config;
+    std::string titleDBLanguages = config.getTitleDBLanguages();
+
+    data = net::downloadRequest(fmt::format("https://raw.githubusercontent.com/PoloNX/upcoming-games-link/master/{}.json", titleDBLanguages));
 
     for (auto& game : data) {
         Game g(game);
@@ -67,7 +71,7 @@ void Game::replaceURL(std::string& url) {
     }
 }
 
-Game::Game(nlohmann::json& game) {
+Game::Game(nlohmann::json& game) : game(game){
     if (game.find("bannerUrl") != game.end() && !game["bannerUrl"].is_null()) 
         bannerUrl = game["bannerUrl"];
 

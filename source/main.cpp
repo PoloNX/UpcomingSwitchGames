@@ -3,7 +3,11 @@
 
 #include "utils/constants.hpp"
 #include "utils/games.hpp"
+#include "utils/config.hpp"
 #include "views/recycling_list_tab.hpp"
+#include "views/settings_tab.hpp"
+#include "views/favorite_tab.hpp"
+
 #include "activity/main_activity.hpp"
 
 int main(int argc, char* argv[]) {
@@ -14,14 +18,21 @@ int main(int argc, char* argv[]) {
         brls::Logger::error("Unable to init Borealis application");
         return -1;
     }
-
+    {
+        cfg::Config config;
+        if (config.getAppLanguage() != "auto") {
+            brls::loadTranslations(config.getAppLanguage());
+        } else {
+            brls::loadTranslations();
+        }
+    }
     brls::Application::createWindow(fmt::format("UpcomingSwitchGames {}.{}.{}", MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION));
     brls::Application::getPlatform()->setThemeVariant(brls::ThemeVariant::DARK);
     brls::Application::setGlobalQuit(false);
 
-
-
     brls::Application::registerXMLView("RecyclingListTab", RecyclingListTab::create);
+    brls::Application::registerXMLView("FavoritesTab", FavoriteGamesTab::create);
+    brls::Application::registerXMLView("SettingsTab", SettingsTab::create);
 
     // Add custom values to the theme
     brls::Theme::getLightTheme().addColor("captioned_image/caption", nvgRGB(2, 176, 183));

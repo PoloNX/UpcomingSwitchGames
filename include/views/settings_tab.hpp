@@ -6,6 +6,8 @@ class SettingsTab : public brls::Box {
     public:
         SettingsTab();
 
+        static brls::View* create();
+
     private:
         void on_titledb_selector_change();
         void on_language_selector_change();

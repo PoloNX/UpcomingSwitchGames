@@ -42,6 +42,8 @@ public:
     int getReleaseDate() const {return releaseDate;}
     const std::vector<std::string>& getScreenshots() const {return screenshots;}
     int getSize() const {return size;}
+
+    nlohmann::json getJson() const {return game;}
 private:
     void replaceURL(std::string& url);
 
@@ -66,6 +68,9 @@ private:
     int releaseDate;
     std::vector<std::string> screenshots;
     int size;
+
+    //TODO : improve this and make one function which recreate the json from the game
+    nlohmann::json game;
 };
 
 class UpcomingGames {

@@ -1,10 +1,11 @@
 <brls:Box
     width="auto"
-    height="auto">
+    height="auto"
+    axis="column">
 
     <brls:RecyclerFrame
         id="recycler"
-        width="100px"
+        width="auto"
         height="auto"
         grow="1.0"
         paddingTop="@style/brls/sidebar/padding_top"

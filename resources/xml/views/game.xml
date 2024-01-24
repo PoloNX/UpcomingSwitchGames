@@ -146,7 +146,7 @@
                 <brls:Header
                     width="auto"
                     height="auto"
-                    title="Description"
+                    title="@i18n/app/game/description"
                     marginBottom="30px"/>
 
                 <brls:Label
@@ -160,7 +160,7 @@
                 <brls:Header
                     width="auto"
                     height="auto"
-                    title="Screenshots"
+                    title="@i18n/app/game/screenshots"
                     marginTop="30px"/>
                             
             </brls:Box>

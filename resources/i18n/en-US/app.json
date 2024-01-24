@@ -1,0 +1,33 @@
+{
+    "title" : "UpcomingSwitchGames",
+
+    "tabs" : {
+        "upcoming" : "Upcoming Games",
+        "favorites" : "Favorites Games",
+        "settings" : "Settings",
+        "about" : "About"
+    },
+    
+    "settings": {
+        "titledb_languages" : "TitleDB Languages",
+        "app_language" : "App Language"
+    },
+
+    "hints" : {
+        "favorite" : "Favorite",
+        "unfavorite" : "Unfavorite",
+        "sort" : "Sort",
+        "clear" : "Clear All"
+    },
+
+    "game" : {
+        "description" : "Description",
+        "screenshots" : "Screenshots",
+        "titleId" : "Title ID",
+        "publisher" : "Publisher",
+        "size": "Size",
+        "releaseDate" : "Release Date",
+        "Languages" : "Languages",
+        "category" : "Category"
+    } 
+}

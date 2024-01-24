@@ -9,6 +9,9 @@ const int REVISION_VERSION = 0;
 // The ip addres of the nintendo server may change in the future
 const std::string NINTENDO_IP = "23.214.229.233";
 
+const std::string CONFIG_PATH = "sdmc:/config/UpcomingSwitchGames/";
+const std::string CONFIG_FILE = "sdmc:/config/UpcomingSwitchGames/config.json";
+
 const std::vector<std::string> TITLE_DB_LANGUAGES = {
     "AR.en",	
     "AR.es",	

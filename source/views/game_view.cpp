@@ -1,6 +1,8 @@
 #include "views/game_view.hpp"
 #include "activity/main_activity.hpp"
 
+using namespace brls::literals;
+
 GameView::GameView(Game game) : game(game)
 {
     this->inflateFromXMLRes("xml/views/game.xml");
@@ -24,45 +26,45 @@ GameView::GameView(Game game) : game(game)
     image_overlay->setColor(nvgRGBA(100, 100, 100, 0.8*255));
 
     if(game.getTitleID().size() > 0)
-        tid->setText(fmt::format("Title id : {}", game.getTitleID()));
+        tid->setText(fmt::format("{} : {}", "app/game/titleId"_i18n, game.getTitleID()));
     else
-        tid->setText("Title id : N/A");
+        tid->setText(fmt::format("{} : N/A", "app/game/titleId"_i18n));
 
     if(game.getPublisher().size() > 0)
-        publisher->setText(fmt::format("Publisher : {}", game.getPublisher()));
+        publisher->setText(fmt::format("{} : {}", "app/game/publisher"_i18n, game.getPublisher()));
     else
-        publisher->setText("Publisher : N/A");
+        publisher->setText(fmt::format("{} : N/A", "app/game/publisher"_i18n));
 
     //SIZE
     if(game.getSize() > 0)
-        size->setText(fmt::format("Size : {}", game.getSize()));
+        size->setText(fmt::format("{} : {}", "app/game/size"_i18n, game.getSize()));
     else
-        size->setText("Size : N/A");
+        size->setText(fmt::format("{} : N/A", "app/game/size"_i18n));
 
     //RELEASE DATE
     if(game.getReleaseDate_str().size() > 0)
-        release_date->setText(fmt::format("Release date : {}", game.getReleaseDate_str()));
+        release_date->setText(fmt::format("{} : {}", "app/game/releaseDate"_i18n, game.getReleaseDate_str()));
     else
-        release_date->setText("Release date : N/A");
+        release_date->setText(fmt::format("{} : N/A", "app/game/releaseDate"_i18n));
     
     //LANGUAGES
     if(game.getLanguages().size() > 0){
-        std::string languages_str = "languages : ";
+        std::string languages_str = fmt::format("{} : ", "app/game/languages"_i18n);
         for(auto& i : game.getLanguages()) {
             languages_str += i + ", ";
         }
         languages->setText(languages_str);
     }
     else
-        languages->setText("languages : N/A");
+        languages->setText(fmt::format("{} : N/A", "app/game/languages"_i18n));
     
     //CATEGORY
     const auto& categories = game.getCategory();
     if (!categories.empty()) {
-        types->setText(fmt::format("Category : {}", fmt::join(categories.begin(), categories.end(), ", ")));
+        types->setText(fmt::format("{} : {}", "app/game/category"_i18n, fmt::join(categories.begin(), categories.end(), ", ")));
     }
     else
-        types->setText("Category : N/A");
+        types->setText(fmt::format("{} : N/A", "app/game/category"_i18n));
 
     //TITLE
     title->setText(game.getName());

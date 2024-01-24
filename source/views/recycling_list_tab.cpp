@@ -3,8 +3,11 @@
 
 #include "utils/download.hpp"
 #include "utils/games.hpp"
+#include "utils/config.hpp"
 
 #include <json.hpp>
+
+using namespace brls::literals;
 
 RecyclerCell::RecyclerCell()
 {
@@ -74,6 +77,14 @@ brls::RecyclerCell* DataSource::cellForRow(brls::RecyclerFrame* recycler, brls::
     item->subtitle->setText(fmt::format("Release Date : {}, ", upcomingGames->getGames()[indexPath.row].getReleaseDate_str()));
     item->subtitle->setTextColor(nvgRGBA(100, 100, 100, 255));
 
+    item->registerAction("app/hints/favorite"_i18n, brls::ControllerButton::BUTTON_X, [this, item, indexPath](brls::View* view){
+        brls::Logger::info("favorite : {}", upcomingGames->getGames()[indexPath.row].getName());
+        cfg::Config config;
+        config.addFavoriteGame(upcomingGames->getGames()[indexPath.row]);
+        config.saveConfig();
+        return true;
+    });
+
     //ICON DOWNLOAD
     //not used because of weird behavior
     /*item->getFocusEvent()->subscribe([this, item, indexPath](brls::View* view) {
@@ -101,7 +112,7 @@ RecyclingListTab::RecyclingListTab()
 
     dataSource = new DataSource(GameSort::RELEASE_DATE);
 
-    this->registerAction("Sort", brls::ControllerButton::BUTTON_Y, [this](brls::View* view){
+    this->registerAction("app/hints/sort"_i18n, brls::ControllerButton::BUTTON_Y, [this](brls::View* view){
         int selected = 0;
         brls::Dropdown* dropdown = new brls::Dropdown(
             "Sort", std::vector<std::string> {"Release Date", "Name", "Size"}, [&selected, this](int _selected) {
