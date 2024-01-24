@@ -1,0 +1,39 @@
+{
+    "title" : "UpcomingSwitchGames",
+
+    "tabs" : {
+        "upcoming" : "Грядущие игры",
+        "favorites" : "Избранные игры",
+        "settings" : "Настройки",
+        "about" : "О программе"
+    },
+    
+    "settings": {
+        "titledb_languages" : "Язык TitleDB",
+        "app_language" : "Язык приложения"
+    },
+
+    "hints" : {
+        "favorite" : "Избранное",
+        "unfavorite" : "Нелюбимое",
+        "sort" : "Сортировать",
+        "clear" : "Отчистить всё"
+    },
+
+    "game" : {
+        "description" : "Описание",
+        "screenshots" : "Скриншоты",
+        "titleId" : "Title ID",
+        "publisher" : "Издатель",
+        "size": "Размер",
+        "releaseDate" : "Дата выхода",
+        "Languages" : "Языки",
+        "category" : "Категории"
+    },
+
+    "about" : {
+        "description" : "UcpomingSwitchGames — простое приложение, дающее вам возможность просматривать предстоящие игры для Nintendo Switch.",
+        "license" : "Лицензия GPL-3.0.",
+        "github" : "Зайдите на github.com/PoloNX/UpcomingSwitchGames."
+    }
+}
