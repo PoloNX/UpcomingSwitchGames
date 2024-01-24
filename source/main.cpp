@@ -13,19 +13,22 @@
 int main(int argc, char* argv[]) {
     brls::Logger::setLogLevel(brls::LogLevel::LOG_DEBUG);
     //brls::Application::enableDebuggingView(true);
+    
+    {
+        cfg::Config config;
+        if (config.getAppLanguage() != "auto") {
+            brls::Platform::APP_LOCALE_DEFAULT = config.getAppLanguage();
+            brls::Logger::debug("Loaded translations for language {}", config.getAppLanguage());
+        }
+    }
 
     if(!brls::Application::init()) {
         brls::Logger::error("Unable to init Borealis application");
         return -1;
     }
-    {
-        cfg::Config config;
-        if (config.getAppLanguage() != "auto") {
-            brls::loadTranslations(config.getAppLanguage());
-        } else {
-            brls::loadTranslations();
-        }
-    }
+
+    brls::loadTranslations();
+
     brls::Application::createWindow(fmt::format("UpcomingSwitchGames {}.{}.{}", MAJOR_VERSION, MINOR_VERSION, REVISION_VERSION));
     brls::Application::getPlatform()->setThemeVariant(brls::ThemeVariant::DARK);
     brls::Application::setGlobalQuit(false);
