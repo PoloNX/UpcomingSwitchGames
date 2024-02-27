@@ -1,39 +1,39 @@
 {
-    "title" : "UpcomingSwitchGames",
+    "title" : "新游戏预览工具",
 
     "tabs" : {
-        "upcoming" : "Upcoming Games",
-        "favorites" : "Favorites Games",
-        "settings" : "Settings",
-        "about" : "About"
+        "upcoming" : "即将到来的游戏",
+        "favorites" : "最喜欢的游戏",
+        "settings" : "设置",
+        "about" : "关于"
     },
     
     "settings": {
-        "titledb_languages" : "TitleDB Languages",
-        "app_language" : "App Language"
+        "titledb_languages" : "游戏名 语言选择",
+        "app_language" : "插件 语言选择"
     },
 
     "hints" : {
-        "favorite" : "Favorite",
-        "unfavorite" : "Unfavorite",
-        "sort" : "Sort",
-        "clear" : "Clear All"
+        "favorite" : "喜欢的游戏",
+        "unfavorite" : "不喜欢的游戏",
+        "sort" : "排序",
+        "clear" : "初始化"
     },
 
     "game" : {
-        "description" : "Description",
-        "screenshots" : "Screenshots",
+        "description" : "描述",
+        "screenshots" : "截图",
         "titleId" : "Title ID",
-        "publisher" : "Publisher",
-        "size": "Size",
-        "releaseDate" : "Release Date",
-        "Languages" : "Languages",
-        "category" : "Category"
+        "publisher" : "开发商",
+        "size": "文件大小",
+        "releaseDate" : "发布日期",
+        "Languages" : "语言",
+        "category" : "分类"
     },
 
     "about" : {
-        "description" : "UcpomingSwitchGames is a simple app that allows you to see the upcoming games for the Nintendo Switch.",
+        "description" : "UcpomingSwitchGames 是一个简单的应用程序，可让您查看即将推出的Nintendo Switch游戏.",
         "license" : "Licensed under GPL-3.0",
-        "github" : "Find it on github.com/PoloNX/UpcomingSwitchGames"
+        "github" : "本插件由PoloNX在GitHub进行开发：github.com/PoloNX/UpcomingSwitchGames 中文翻译由：Faker_Dev提供帮助！"
     }
 }
