@@ -1,14 +1,14 @@
 {
-  "ok": "确定",
-  "cancel": "取消",
-  "back": "返回",
-  "exit": "退出",
-  "exit_hint": "你将会关闭该插件",
-  "open": "打开",
-  "on": "开",
-  "off": "关",
-  "delete": "删除",
-  "save": "保存",
-  "input": "请输入...",
-  "submit": "提交"
+  "ok": "OK",
+  "cancel": "Cancel",
+  "back": "Back",
+  "exit": "Exit",
+  "exit_hint": "You will exit this app",
+  "open": "Open",
+  "on": "On",
+  "off": "Off",
+  "delete": "Delete",
+  "save": "Save",
+  "input": "Please input...",
+  "submit": "Submit"
 }
