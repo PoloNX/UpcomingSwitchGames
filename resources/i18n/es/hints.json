@@ -1,0 +1,14 @@
+{
+  "ok": "OK",
+  "cancel": "Cancelar",
+  "back": "Atrás",
+  "exit": "Salir",
+  "exit_hint": "Saldrás de la app",
+  "open": "Abrir",
+  "on": "Encender",
+  "off": "Apagar",
+  "delete": "Eliminar",
+  "save": "Guardar",
+  "input": "Por favor, introduzca...",
+  "submit": "Enviar"
+}

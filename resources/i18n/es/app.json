@@ -1,0 +1,39 @@
+{
+    "title" : "UpcomingSwitchGames",
+
+    "tabs" : {
+        "upcoming" : "Próximamente",
+        "favorites" : "Favoritos",
+        "settings" : "Configuración",
+        "about" : "Acerca de"
+    },
+    
+    "settings": {
+        "titledb_languages" : "Idiomas de TitleDB",
+        "app_language" : "Idioma de la app"
+    },
+
+    "hints" : {
+        "favorite" : "Favorito",
+        "unfavorite" : "Quitar favorito",
+        "sort" : "Ordenar",
+        "clear" : "Limpiar"
+    },
+
+    "game" : {
+        "description" : "Descripción",
+        "screenshots" : "Capturas de pantalla",
+        "titleId" : "Title ID",
+        "publisher" : "Editor",
+        "size": "Tamaño",
+        "releaseDate" : "Fecha de salida",
+        "Languages" : "Idiomas",
+        "category" : "Categoría"
+    },
+
+    "about" : {
+        "description" : "UcpomingSwitchGames es una simple app que permite que veas los próximos lanzamientos para la Nintendo Switch.",
+        "license" : "Licencia GPL-3.0.",
+        "github" : "Encuéntrala en github.com/PoloNX/UpcomingSwitchGames."
+    }
+}
